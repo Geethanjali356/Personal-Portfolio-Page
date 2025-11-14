@@ -1,0 +1,390 @@
+/* --- Global Styles --- */
+
+:root {
+    --primary-color: #007bff; /* A nice blue for accents (Bonus: change for unique theme) */
+    --secondary-color: #6c757d;
+    --text-color: #343a40;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Prevents horizontal scroll on mobile */
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    /* Prevents horizontal scroll on mobile */
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Reusable Button Style */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade of primary */
+}
+
+/* --- Header & Navigation --- */
+
+header {
+    background: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Desktop Navigation (Default view) */
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-nav {
+    display: none; /* Hidden by default */
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+
+.hero-section {
+    background: var(--background-color);
+    min-height: calc(100vh - 70px); /* Full height minus header */
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out; /* Bonus Animation */
+}
+
+/* --- Skills Section --- */
+
+.skills-section {
+    background: #e9ecef;
+    text-align: center;
+}
+
+.skills-section h3 {
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    /* Default: 3 columns for desktop */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.skill-card {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease; /* Bonus: Card Hover Effect */
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.skill-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* --- Contact & Footer --- */
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-section input, .contact-section textarea {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+footer {
+    background: var(--text-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- Responsiveness: Media Queries --- */
+
+
+/* Tablet View (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Hero Section: Text Reflows fine, no major change needed */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Skills: Grid becomes 2-column */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View (≤ 767px) */
+@media (max-width: 767px) {
+    /* Header: Stacked Navigation / Hamburger Menu */
+    .desktop-nav {
+        display: none; /* Hide desktop links */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background-color: var(--text-color);
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* Hamburger Menu Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Below the header */
+        left: 0;
+        width: 100%;
+        background: var(--card-background);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%); /* Start off-screen */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-nav.active {
+        transform: translateY(0); /* Slide in */
+    }
+
+    .mobile-nav a {
+        text-align: center;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: var(--text-color);
+        border-bottom: 1px solid #eee;
+    }
+    
+    /* Hero Section: Stack content vertically */
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        order: 2; /* Content below image on mobile */
+    }
+    
+    .hero-image {
+        order: 1; /* Image first */
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Skills: Grid becomes 1-column */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* General Section Padding Adjustment */
+    section {
+        padding: 50px 0;
+    }
+}
+
+
+/* --- Bonus: Subtle Animation (CSS Only) --- */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1, .hero-content h2, .hero-content p, .contact-btn {
+    animation: fadeIn 1s ease-out 0.2s backwards;
+}
+
+/* Apply staggered animation to skills cards */
+.skill-card {
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+.skills-grid .skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skills-grid .skill-card:nth-child(2) { animation-delay: 0.4s; }
+.skills-grid .skill-card:nth-child(3) { animation-delay: 0.6s; }
+.skills-grid .skill-card:nth-child(4) { animation-delay: 0.8s; }
+.skills-grid .skill-card:nth-child(5) { animation-delay: 1.0s; }
+.skills-grid .skill-card:nth-child(6) { animation-delay: 1.2s; }
